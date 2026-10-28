@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adarsh Nair Portfolio</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Personal portfolio of Adarsh Nair (Zorro) — building software that protects, rewards and unlocks, on chain and with AI.">
+  <meta name="author" content="Adarsh Nair (PHANTOMZORRO)">
+  
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Adarsh Nair Portfolio">
+  <meta property="og:description" content="I build software that protects, rewards and unlocks, on chain and with AI.">
+  <meta property="og:image" content="profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Adarsh Nair Portfolio">
+  <meta name="twitter:description" content="I build software that protects, rewards and unlocks, on chain and with AI.">
+  <meta name="twitter:image" content="profile.jpg">
+
+  <!-- Inline SVG Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230e0b09'/><path d='M8 9h16l-12 14h12' stroke='%23f5a623' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans (400, 500, 600, 700, 800) & JetBrains Mono (400, 500, 600, 700) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet (with cache-buster to prevent stale browser cache) -->
+  <link rel="stylesheet" href="styles.css?v=warmblack3">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. Top Bar Navigation
+       ========================================================================= -->
+  <header class="top-bar">
+    <div class="container top-bar-inner">
+      <a href="#" class="brand" aria-label="PHANTOMZORRO home">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>PHANTOMZORRO</span>
+      </a>
+      
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#into" class="nav-link">What I'm into</a>
+        <a href="#stack" class="nav-link">Stack</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button id="theme-toggle" class="theme-mode-switch" type="button" aria-label="Toggle dark and light mode">
+          <span class="mode-track">
+            <span class="mode-thumb" aria-hidden="true"></span>
+          </span>
+          <span class="theme-mode-text" id="theme-mode-text">Dark Mode</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- =======================================================================
+         2. Hero Section
+         ======================================================================= -->
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <!-- Hero Left Column -->
+        <div class="hero-content">
+          <div class="mono-label">It's me, Zorro</div>
+          <h1 class="hero-title">Adarsh Nair</h1>
+          <p class="hero-tagline">I build software that protects, rewards and unlocks, on chain and with AI.</p>
+          <p class="hero-lead">Your questions matter. I'm always here to help.</p>
+          
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">See all projects</a>
+            <a href="#contact" class="btn btn-secondary">Collaborate with me</a>
+          </div>
+        </div>
+
+        <!-- Hero Right Column: Builder Card -->
+        <div class="hero-card-col">
+          <div class="builder-card">
+            <div class="builder-photo-wrap">
+              <img 
+                src="profile.jpg" 
+                alt="Illustrated portrait of Adarsh in a black bucket hat and hoodie, with code open on a monitor behind him" 
+                class="builder-photo"
+                width="400"
+                height="320"
+                loading="eager"
+              >
+            </div>
+
+            <div class="builder-header">
+              <span class="builder-badge">BUILDER</span>
+              <span class="status-pill open-collab">
+                <span class="pill-dot"></span>
+                <span>Open to collaborate</span>
+              </span>
+            </div>
+
+            <div class="builder-specs">
+              <div class="spec-row">
+                <span class="spec-key">Handle</span>
+                <span class="spec-val">PHANTOMZORRO</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">Projects</span>
+                <span class="spec-val spec-count" id="hero-projects-count">4</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">Chains</span>
+                <span class="spec-val">Avalanche Fuji, Sepolia</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">Languages</span>
+                <span class="spec-val">Python, TypeScript, JavaScript</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         3. Projects Section (Blockchain Explorer Blocks)
+         ======================================================================= -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-eyebrow">Projects</div>
+        <h2 class="section-title" id="projects-heading">Four projects, chained</h2>
+        <p class="section-intro">Two run on testnets, one is a deployed AI safety platform, and one is still being written up. Every card links to the source.</p>
+
+        <!-- Vertical Blocks Chain -->
+        <div class="chain-wrapper">
+          <div class="blocks-chain" id="blocks-chain">
+            
+            <!-- Block 1: C.A.P.S. (Featured) -->
+            <article class="chain-block featured" id="block-caps">
+              <div class="block-meta">
+                <div class="block-height">
+                  <span class="block-height-num">BLOCK #001</span>
+                </div>
+                <div class="block-meta-list">
+                  <div class="meta-item">
+                    <span class="meta-label">Status</span>
+                    <span class="meta-value">
+                      <span class="status-pill deployed">
+                        <span class="pill-dot"></span>Deployed
+                      </span>
+                    </span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Network</span>
+                    <span class="meta-value">Off-chain · AI</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Built with</span>
+                    <span class="meta-value">Google Gemini</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Hosting</span>
+                    <span class="meta-value">Vercel + Render</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block-content">
+                <div class="block-header">
+                  <div class="block-title-row">
+                    <h3 class="block-title">C.A.P.S.</h3>
+                    <span class="block-tagline">— "Continuous Anomaly Protection System"</span>
+                  </div>
+                  <p class="block-description">An autonomous road-safety platform that turns CCTV cameras into emergency responders. It watches the feed, decides whether an incident is real, and alerts the nearest authorities without a human in the loop.</p>
+                </div>
+
+                <ul class="block-bullets">
+                  <li class="block-bullet-item">Gemini analyses camera frames and rates each incident minor or major.</li>
+                  <li class="block-bullet-item">Major incidents alert the nearest hospital, police, fire and ambulance services at once, by WebSocket and Twilio voice call.</li>
+                  <li class="block-bullet-item">Each authority gets a 60 second countdown. A decline or timeout escalates to the next nearest.</li>
+                  <li class="block-bullet-item">Saves a snapshot and a 15 second clip per detection, tracks response times, and installs as a phone app.</li>
+                </ul>
+
+                <div class="block-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">FastAPI</span>
+                  <span class="tag">OpenCV</span>
+                  <span class="tag">Gemini</span>
+                  <span class="tag">Twilio</span>
+                  <span class="tag">React</span>
+                  <span class="tag">Vite</span>
+                  <span class="tag">Tailwind</span>
+                  <span class="tag">Leaflet</span>
+                </div>
+
+                <div class="block-links">
+                  <a href="https://caps-platform.vercel.app" target="_blank" rel="noopener noreferrer" class="block-link primary">
+                    Live app ↗
+                  </a>
+                  <a href="https://github.com/PHANTOMZORRO/caps-platform" target="_blank" rel="noopener noreferrer" class="block-link">
+                    Source: caps-platform ↗
+                  </a>
+                  <a href="https://github.com/PHANTOMZORRO/caps-security-platform" target="_blank" rel="noopener noreferrer" class="block-link">
+                    Source: caps-security-platform ↗
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Connector 1 -> 2 -->
+            <div class="block-connector" aria-hidden="true">
+              <span class="block-connector-hash">0x7c94…b3f1</span>
+            </div>
+
+            <!-- Block 2: EduChain -->
+            <article class="chain-block" id="block-educhain">
+              <div class="block-meta">
+                <div class="block-height">
+                  <span class="block-height-num">BLOCK #002</span>
+                </div>
+                <div class="block-meta-list">
+                  <div class="meta-item">
+                    <span class="meta-label">Status</span>
+                    <span class="meta-value">
+                      <span class="status-pill testnet">
+                        <span class="pill-dot"></span>Testnet
+                      </span>
+                    </span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Network</span>
+                    <span class="meta-value">Avalanche Fuji</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Chain ID</span>
+                    <span class="meta-value">43113</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Token</span>
+                    <span class="meta-value">EDU</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Contract</span>
+                    <span class="meta-value">0x9a91…9dC4</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block-content">
+                <div class="block-header">
+                  <div class="block-title-row">
+                    <h3 class="block-title">EduChain</h3>
+                    <span class="block-tagline">— "Academic token system on Avalanche"</span>
+                  </div>
+                  <p class="block-description">Students earn EDU tokens for their grades and achievements. Each score is normalised against the whole college, so tokens get harder to earn as the college improves.</p>
+                </div>
+
+                <!-- Formula Box -->
+                <div class="formula-box">
+                  <code>Tokens = 100 × (StudentScore / max(CPI, 1))<br>CPI    = average of all StudentScores</code>
+                </div>
+
+                <ul class="block-bullets">
+                  <li class="block-bullet-item">The EduToken contract has owner-only minting and no approve or transferFrom, so tokens cannot be traded on a DEX.</li>
+                  <li class="block-bullet-item">Student registrations and the full mint history are stored on chain.</li>
+                  <li class="block-bullet-item">A FastAPI backend runs the scoring and calls the contract. An admin tab triggers distribution.</li>
+                </ul>
+
+                <div class="block-tags">
+                  <span class="tag">Solidity</span>
+                  <span class="tag">Hardhat</span>
+                  <span class="tag">TypeScript</span>
+                  <span class="tag">Python</span>
+                  <span class="tag">FastAPI</span>
+                </div>
+
+                <div class="block-links">
+                  <a href="https://github.com/PHANTOMZORRO/EduChain" target="_blank" rel="noopener noreferrer" class="block-link primary">
+                    Source ↗
+                  </a>
+                  <a href="https://testnet.snowscan.xyz/address/0x9a916799348A8c7F79e51D6161bf9E56f01a9dC4" target="_blank" rel="noopener noreferrer" class="block-link">
+                    Contract on Snowscan ↗
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Connector 2 -> 3 -->
+            <div class="block-connector" aria-hidden="true">
+              <span class="block-connector-hash">0x4e28…e8a0</span>
+            </div>
+
+            <!-- Block 3: AlfaazVault -->
+            <article class="chain-block" id="block-alfaazvault">
+              <div class="block-meta">
+                <div class="block-height">
+                  <span class="block-height-num">BLOCK #003</span>
+                </div>
+                <div class="block-meta-list">
+                  <div class="meta-item">
+                    <span class="meta-label">Status</span>
+                    <span class="meta-value">
+                      <span class="status-pill testnet">
+                        <span class="pill-dot"></span>Testnet
+                      </span>
+                    </span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Network</span>
+                    <span class="meta-value">Sepolia</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Chain ID</span>
+                    <span class="meta-value">11155111</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Wallet</span>
+                    <span class="meta-value">MetaMask</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block-content">
+                <div class="block-header">
+                  <div class="block-title-row">
+                    <h3 class="block-title">AlfaazVault</h3>
+                    <span class="block-tagline">— "Words worth unlocking"</span>
+                  </div>
+                  <p class="block-description">A marketplace where writers sell stories, poetry, shayari and essays for Sepolia ETH, and readers pay on chain to unlock and read them.</p>
+                </div>
+
+                <ul class="block-bullets">
+                  <li class="block-bullet-item">The full text never reaches the browser or public API until the backend confirms on chain that the reader has paid.</li>
+                  <li class="block-bullet-item">Gasless sign-in with a MetaMask signature (EIP-191), then a short-lived session cookie.</li>
+                  <li class="block-bullet-item">The backend checks each purchase receipt and matches the text hash against the hash emitted on chain.</li>
+                  <li class="block-bullet-item">Typography for English, Urdu (right to left) and Hindi.</li>
+                </ul>
+
+                <div class="block-tags">
+                  <span class="tag">Next.js</span>
+                  <span class="tag">TypeScript</span>
+                  <span class="tag">ethers.js</span>
+                  <span class="tag">Prisma</span>
+                  <span class="tag">Tailwind</span>
+                  <span class="tag">Solidity</span>
+                </div>
+
+                <div class="block-links">
+                  <a href="https://github.com/PHANTOMZORRO/alfaazvault" target="_blank" rel="noopener noreferrer" class="block-link primary">
+                    Source ↗
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Connector 3 -> 4 -->
+            <div class="block-connector" aria-hidden="true">
+              <span class="block-connector-hash">0x81fa…c017</span>
+            </div>
+
+            <!-- Block 4: digital_will -->
+            <article class="chain-block" id="block-digitalwill">
+              <div class="block-meta">
+                <div class="block-height">
+                  <span class="block-height-num">BLOCK #004</span>
+                </div>
+                <div class="block-meta-list">
+                  <div class="meta-item">
+                    <span class="meta-label">Status</span>
+                    <span class="meta-value">
+                      <span class="status-pill pending">
+                        <span class="pill-dot"></span>Write-up pending
+                      </span>
+                    </span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Network</span>
+                    <span class="meta-value">To be added</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block-content">
+                <div class="block-header">
+                  <div class="block-title-row">
+                    <h3 class="block-title">digital_will</h3>
+                    <span class="block-tagline">— "Digital will"</span>
+                  </div>
+                  <p class="block-description">The fourth project. The full description, stack and links are being added.</p>
+                </div>
+
+                <div class="block-links">
+                  <a href="https://github.com/PHANTOMZORRO" target="_blank" rel="noopener noreferrer" class="block-link primary">
+                    GitHub profile ↗
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Extra projects injected here dynamically via EXTRA_PROJECTS -->
+            <div id="extra-blocks-container"></div>
+
+          </div>
+        </div>
+
+        <!-- 4. More From GitHub (Compact Repo Grid) -->
+        <div class="more-github" id="more-github">
+          <div class="more-github-header">
+            <h3 class="more-github-title">More from GitHub</h3>
+            <p class="more-github-desc">Synced dynamically from PHANTOMZORRO's public repositories.</p>
+          </div>
+
+          <div class="repos-grid" id="github-repos-grid" aria-live="polite">
+            <!-- Repo cards generated via script.js using safe DOM textContent methods -->
+          </div>
+
+          <div class="github-note" id="github-note">
+            Connecting to GitHub API…
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. Owner Tool (#add-project, hidden by default)
+         ======================================================================= -->
+    <section class="section container" id="add-project" hidden aria-hidden="true">
+      <div class="add-project-section">
+        <div class="add-project-header">
+          <h2 class="add-project-title">
+            <span>Add a project from GitHub</span>
+            <span class="owner-badge">OWNER TOOL</span>
+          </h2>
+          <p class="add-project-desc">Fetch and inspect any GitHub repository to auto-generate a structured project block configuration.</p>
+        </div>
+
+        <form class="add-project-form" id="owner-fetch-form" onsubmit="return false;">
+          <input 
+            type="text" 
+            id="owner-repo-input" 
+            class="add-project-input" 
+            placeholder="PHANTOMZORRO/digital_will or a full GitHub link" 
+            aria-label="Repository identifier or URL"
+            autocomplete="off"
+            spellcheck="false"
+          >
+          <button type="button" id="fetch-project-btn" class="btn btn-primary">
+            Fetch project
+          </button>
+        </form>
+
+        <div class="add-project-feedback" id="owner-feedback"></div>
+
+        <!-- Live Preview Block Container -->
+        <div class="owner-preview-wrap" id="owner-preview-wrap" style="display: none;">
+          <div class="preview-title">// Live Block Preview</div>
+          <div id="owner-preview-target"></div>
+
+          <div class="code-output-wrap">
+            <div class="code-output-top">
+              <span class="code-output-label">Generated JSON</span>
+              <button type="button" id="copy-json-btn" class="btn btn-secondary btn-sm">Copy JSON</button>
+            </div>
+            <pre class="json-code-box"><code id="generated-json-code"></code></pre>
+            <p class="code-note">Paste it into the EXTRA_PROJECTS array at the top of script.js, then redeploy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         What I’m into Section
+         ======================================================================= -->
+    <section class="section" id="into">
+      <div class="container">
+        <div class="section-eyebrow">What I’m into</div>
+        <h2 class="section-title">Four areas I keep coming back to, and the projects that came out of them.</h2>
+
+        <div class="into-grid">
+          <!-- Area 1: Web3 apps -->
+          <article class="into-card">
+            <div class="into-card-header">
+              <span class="into-num">01</span>
+              <span class="status-pill testnet"><span class="pill-dot"></span>Web3</span>
+            </div>
+            <h3 class="into-title">Web3 apps</h3>
+            <p class="into-desc">Apps people use directly with a wallet, where payment, access and ownership happen on chain. AlfaazVault is the example: readers pay in ETH to unlock writing, and the app checks the payment on chain before showing anything.</p>
+            <div class="into-link-wrap">
+              <a href="#block-alfaazvault" class="into-link">View AlfaazVault ↓</a>
+            </div>
+          </article>
+
+          <!-- Area 2: Blockchain -->
+          <article class="into-card">
+            <div class="into-card-header">
+              <span class="into-num">02</span>
+              <span class="status-pill testnet"><span class="pill-dot"></span>Smart Contracts</span>
+            </div>
+            <h3 class="into-title">Blockchain</h3>
+            <p class="into-desc">Smart contracts and the rules they enforce without a middleman. EduChain is the example: an EDU token with owner-only minting and a score formula that adjusts as the whole college improves.</p>
+            <div class="into-link-wrap">
+              <a href="#block-educhain" class="into-link">View EduChain ↓</a>
+            </div>
+          </article>
+
+          <!-- Area 3: AI and ML -->
+          <article class="into-card">
+            <div class="into-card-header">
+              <span class="into-num">03</span>
+              <span class="status-pill deployed"><span class="pill-dot"></span>Autonomous AI</span>
+            </div>
+            <h3 class="into-title">AI and ML</h3>
+            <p class="into-desc">Systems that look at the real world and make a decision. C.A.P.S. is the example: it watches CCTV feeds, judges whether an incident is real, and alerts the nearest authorities on its own.</p>
+            <div class="into-link-wrap">
+              <a href="#block-caps" class="into-link">View C.A.P.S. ↓</a>
+            </div>
+          </article>
+
+          <!-- Area 4: Web development -->
+          <article class="into-card">
+            <div class="into-card-header">
+              <span class="into-num">04</span>
+              <span class="status-pill neutral"><span class="pill-dot"></span>Interfaces</span>
+            </div>
+            <h3 class="into-title">Web development</h3>
+            <p class="into-desc">Fast, clear interfaces for tools people depend on. This covers the dashboards and live maps in C.A.P.S., the wallet flows in AlfaazVault, and this portfolio.</p>
+            <div class="into-link-wrap">
+              <a href="#projects" class="into-link">View interfaces ↓</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Bottom Callout -->
+        <div class="into-callout">
+          <p class="into-callout-text">“If you’re building in any of these, I’d like to hear about it.”</p>
+          <a href="#contact" class="btn btn-primary btn-sm">Collaborate with me ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. Stack Section
+         ======================================================================= -->
+    <section class="section" id="stack">
+      <div class="container">
+        <div class="section-eyebrow">Stack</div>
+        <h2 class="section-title">What I build with</h2>
+        <p class="section-intro">Taken from the four repositories above.</p>
+
+        <div class="stack-grid">
+          <!-- Column 1: Chain -->
+          <div class="stack-card">
+            <div class="stack-card-header">
+              <h3 class="stack-cat-title">Chain</h3>
+              <span class="status-pill neutral"><span class="pill-dot"></span>Web3</span>
+            </div>
+            <ul class="stack-items-list">
+              <li class="stack-item"><span class="stack-item-bullet">›</span> Solidity</li>
+              <li class="stack-item"><span class="stack-item-bullet">›</span> Hardhat</li>
+              <li class="stack-item"><span class="stack-item-bullet">›</span> ethers.js</li>
+              <li class="stack-item"><span class="stack-item-bullet">›</span> MetaMask (EIP-191)</li>
+              <li class="stack-item"><span class="stack-item-bullet">›</span> Avalanche Fuji</li>
+              <li class="stack-item"><span class="stack-item-bullet">›</span> Sepolia</li>
+            </ul>
+          </div>
+
+          <!-- Column 2: Backend -->
+          <div class="stack-card">
+            <div class="stack-card-header">
+              <h3 class="stack-cat-title">Backend</h3>
+              <span class="status-pill neutral"><span class="pill-dot"></span>Server</span>
+            </div>
+            <ul class="stack-items-list">
+              <li class="stack-item"><span class="stack-item-bullet">›</span> Python (FastAPI)</li>
+              <li class="stack-item"><span class="stack-item-bullet">›</span> WebSockets</li>
+              <li class="stack-item"><span class="stack-item-bullet">›</span> Node.js</li>
+              <li class="stack-item"><span class="stack-item-bullet">›</span> Prisma</li>
+              <li class="stack-item"><span class="stack-item-bullet">›</span> Twilio Voice</li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Frontend -->
+          <div class="stack-card">
+            <div class="stack-card-header">
+              <h3 class="stack-cat-title">Frontend</h3>
+              <span class="status-pill neutral"><span class="pill-dot"></span>Client</span>
+            </div>
+            <ul class="stack-items-list">
+              <li class="stack-item"><span class="stack-item-bullet">›</span> React (Vite)</li>
+              <li class="stack-item"><span class="stack-item-bullet">›</span> Next.js</li>
+              <li class="stack-item"><span class="stack-item-bullet">›</span> TypeScript</li>
+              <li class="stack-item"><span class="stack-item-bullet">›</span> Tailwind CSS</li>
+              <li class="stack-item"><span class="stack-item-bullet">›</span> Leaflet maps</li>
+            </ul>
+          </div>
+
+          <!-- Column 4: AI & Vision -->
+          <div class="stack-card">
+            <div class="stack-card-header">
+              <h3 class="stack-cat-title">AI &amp; Vision</h3>
+              <span class="status-pill neutral"><span class="pill-dot"></span>ML</span>
+            </div>
+            <ul class="stack-items-list">
+              <li class="stack-item"><span class="stack-item-bullet">›</span> Google Gemini</li>
+              <li class="stack-item"><span class="stack-item-bullet">›</span> YOLOv8</li>
+              <li class="stack-item"><span class="stack-item-bullet">›</span> OpenCV</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         7. Contact Section
+         ======================================================================= -->
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-left">
+          <div class="section-eyebrow">Contact</div>
+          <h2 class="section-title">Want to collaborate? Reach out.</h2>
+          <p class="contact-lead">If you want to build something together, or you have a doubt, message me on any of these. Email or Telegram is fastest.</p>
+        </div>
+
+        <div class="contact-right">
+          <!-- Rendered dynamically from CONTACT_CONFIG in script.js -->
+          <div class="contact-list" id="contact-list" role="list"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       8. Footer
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-text">© 2026 Adarsh Nair</p>
+    </div>
+  </footer>
+
+  <!-- Toast for Copy notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
